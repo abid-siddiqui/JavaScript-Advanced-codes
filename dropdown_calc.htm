@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style > 
+body {
+    background-color: lightblue;
+}
+
+
+h1 {
+    color: green;
+    text-align: center;
+    font-size: 50px;
+}
+
+p {
+	color: Red;
+    font-family: verdana;
+    font-size: 20px;
+}  </style>
+
+#dropCalc {
+	background-color: green;
+}
+
+<!--<link href="test_css.css"> --> 
+
+<title>
+This is my title
+</title>
+</head>
+<body>
+<select id="dropCalc">
+    <option value="" disabled="disabled" selected="selected">Computation Type</option>
+    <option value="1">Add</option>
+    <option value="2">Subtract</option>
+     <option value="3">Multiply</option>
+    <option value="4">Divide</option>
+</select>
+
+
+<p> x:  <input type = "text" id ="xVal" >  </p>
+<p> y:  <input type = "text" id = "yVal" > </p>
+<input type = "button" onclick = "ComputeVals()" value = "Compute">
+<p id="outCalc">Output</p>
+
+
+<script>
+function ComputeVals()
+{
+	var x, y, dropVal, retVal;
+	dropVal = Number(document.getElementById("dropCalc").value);
+	console.log("typeof DropVal is " + typeof dropVal);
+	x = Number(document.getElementById("xVal").value);
+	console.log("typeof x is "+ typeof x);
+	y = Number(document.getElementById("yVal").value);
+	console.log("typeof y is "+ typeof y);
+	if (isNaN(x) || isNaN(y) || isNaN(dropVal))
+	{
+		console.log("x or y or Calculation type is invalid");
+
+	}
+	else
+	{
+		console.log(" x is "+ x +" y is "+ y + " DropVal is " + dropVal);
+		
+		switch (dropVal) {
+		    case 1:
+		    	retVal = addVal(x,y);
+		        break;
+		    case 2:
+		        retVal = subVal(x,y);
+		        break;
+		    case 3:
+		        retVal = multVal(x,y);
+		        break;
+		    case 4:
+		        retVal = divVal(x,y);
+		        break;
+		    default:
+		        alert("No Calculation type selected");
+		        retVal = "Output";
+		}
+		dropVal = document.getElementById("outCalc").innerHTML = retVal;
+		//return retVal;
+	}
+}
+function addVal(a,b) {
+	return a+b;
+}
+function subVal(c,d) {
+	return c -d;
+}
+function multVal(e,f) {
+	return e*f;
+}
+function divVal(g,h) {
+	return g/h;
+}
+
+
+</script>
+</body>
+</html>

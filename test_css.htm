@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+<style > 
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: green;
+    text-align: center;
+    font-size: 50px;
+}
+
+p {
+	color: Red;
+    font-family: verdana;
+    font-size: 20px;
+}  </style>
+-->
+<!--link href="test_css.css"--> 
+
+<title>
+This is my title
+</title>
+</head>
+<body>
+
+
+<p> x:  <input type = "text" id ="xVal" >  </p>
+<br>
+<p> y:  <input type = "text" id = "yVal" > </p>
+<input type = "button" onclick = "AddVals()" value = "Add">
+<p>Output</p>
+
+
+<script>
+function AddVals()
+{
+	var x = document.getElementById("xVal").value;
+	console.log("x is "+ x);
+	var y = document.getElementById("yVal").value;
+	console.log("y is "+ y);
+	alert(+x + +y);
+}
+</script>
+</body>
+</html>
